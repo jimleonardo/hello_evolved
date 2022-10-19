@@ -40,37 +40,24 @@ This approach of introducing only a single "useful" line of code inevitably tran
 
 ## The Spec
 
-To ensure compatibility with the largest number of programs, the spec assumes standard input and output are used. This may not work for some special purpose or older languages, so examples in those languages will need to adapted to their own capabilities. The spec assumes English because I suck and don't speak anything else. If you want to translate it into another language, please submit an issue and we can talk about it!
+To ensure compatibility with the largest number of programs, the spec assumes standard input and output are used. This may not work for some special purpose or older languages, so examples in those languages will need to adapted to their own capabilities. The spec assumes English because that is, unfortunately, all I speak. If you want to translate it into another language, please submit an issue on GitHub and we can talk about it!
 
-1. Basic input/output and decisions
-    1. The program will present a message to the user with the text "Welcome to Hello Evolved. Please type your name and then press the 'enter' key on your keyboard. Alternatively, you can type 'exit' and then press the 'enter' key on your keyboard to quit."
-    2. The program will read a line of text from the user. This will be the user's name or "exit".
-    3. The program will need to decide what to do with the input.
-        1. If the input is "exit", the program will output "Thank You" and then terminate with an exit code of -101.
-        2. If the input is any other valid string of characters, the program will output "Your name is not Iningo Montoya. It is `name`!" where `name` is the input from the user.
-        3. If the input is empty (zero length), the program will output "You did not enter a name. You must be Iningo Montoya! I am not prepared to die!"
-        4. If the input is not a valid string or zero length, the program will output "The input is not valid. You must be Kenny!" and then terminate with an exit code of -401
-2. Math
-    1. The program then outputs "Demonstrating math. Please enter a number between -100 and 100. This can be a decimal number. Alternatively, you can type 'exit' and then press the 'enter' key on your keyboard to quit."
-    2. The program will read a line of text from the user. This will be the first number or "exit".
-        1. If the input is "exit", the program will output "Thank You" and then terminate with an exit code of -102.
-        2. If the input is not a valid number between -100 and 100, the program will output "The input is not a valid number." and then terminate with an exit code of -402.
-    3. The program then outputs "Please enter another number between -100 and 100. This can be a decimal number. Alternatively, you can type 'exit' and then press the 'enter' key on your keyboard to quit."
-    4. The program will read a line of text from the user. This will be the second number or "exit".
-        1. If the input is "exit", the program will output "Thank You" and then terminate with an exit code of -103.
-        2. If the input is not a valid number between -100 and 100, the program will output "The input is not a valid number." and then terminate with an exit code of -403.
-    5. The program calculates the sum of the first number and second number. It then squares this result. It outputs "The sum of the two numbers squared is `result`" where `result` is the result of the calculation.
-3. Loops and array behavior
-    1. The program then outputs "Demonstrating loops. Please enter another string of characters. Alternatively, you can type 'stop' and then press the 'enter' key to end the loop demonstration."
-    2. The program will read a line of text from the user. This is the beginning of the loop.
-    3. The program will need to decide what to do with the input.
+This specification assumes a console application is being used. For console applications, each output is assumed to be a full line of text including appropriate newline characters unless specified otherwise. For GUI applications, the output may be a single line of text or a single line of text followed by a newline. The spec does not specify how the output is displayed.
+
+1. Basic output
+    1. The program will present a message to the user with the text "Welcome to Hello Evolved."
+2. Loops and array behavior
+    1. The program then outputs "This program will demonstrate a loop. Please enter a string of characters and then press the 'enter' key. Alternatively, you can type 'stop' and then press the 'enter' key to end the loop demonstration."
+    1. For console applications, the program will output a ">" character to the user and wait for input. The cursor should be next to the ">" character so that input appears next to the ">" character.
+    1. The program will read a line of text from the user. This is the beginning of the loop.
+    1. The program will need to decide what to do with the input.
         1. If the input is "stop", the program will output "The loop demonstration is over" and then exit the loop, but not the program.
         2. If the input is any other valid string of characters, the program will output "You entered `text`!" where `text` is the input from the user.
         3. If the input is empty (zero length), the program will output "You did not enter a value."
         4. If the input is not a valid string, the program will output "The input is not valid." - some languages may skip this.
-    4. The program outputs "You have entered these values so far in the loop demonstration:"
-    5. The program will output each value collected so far in the loop demonstration, one to a line.
-    6. The program will output "Continuing the loop demonstration. Please enter another string of characters. Alternatively, you can type 'stop' and then press the 'enter' key to end the loop demonstration."
-    7. The program goes back to the beginning of the loop.
-4. The program outputs "All demonstrations are complete. Thank you for using Hello Evolved."
-5. The program terminates with an exit code of 0.
+    1. The program outputs "You have entered these values so far in the loop demonstration:"
+    1. The program will output each value collected so far in the loop demonstration, one to a line.
+    1. The program will output "Please enter another string of characters and then press the 'enter' key. Alternatively, you can type 'stop' and then press the 'enter' key to end the loop demonstration."
+    1. The program goes back to the beginning of the loop.
+3. The program outputs "The demonstration is complete. Thank you for using Hello Evolved."
+4. The program terminates with an exit code of 0.
