@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class hello_evolved
+public class HelloEvolved
 {
     public static void main(String[] args)
     {
