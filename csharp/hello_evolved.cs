@@ -1,4 +1,3 @@
-using System;
 public class HelloEvolved
 {
     public static void Main()
