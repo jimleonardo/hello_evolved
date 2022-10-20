@@ -4,11 +4,11 @@ def demo_loops
     while true
         print ">"
         loop_input = gets.chomp
-        
+
         if loop_input == "stop"
             break
         end
-        
+                
         if loop_input.nil? or loop_input.empty?
             puts "You did not enter a value."
         else
