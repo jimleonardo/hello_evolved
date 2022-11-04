@@ -15,6 +15,11 @@ const rl = readline.createInterface({
   output: process.stdout
 })
 
+const question = prompt => {
+    return new Promise((resolve, reject) => {
+      rl.question(prompt, resolve)
+    })
+  }
 
 // define the main function
 async function main(){
@@ -23,12 +28,6 @@ async function main(){
     await demoLoops();
     console.log("The demonstration is complete. Thank you for using Hello Evolved.");
 }
-
-const question = prompt => {
-    return new Promise((resolve, reject) => {
-      rl.question(prompt, resolve)
-    })
-  }
 
 async function demoLoops(){
     /* Demonstrates loops and array behavior. */
